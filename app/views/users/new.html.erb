@@ -1,0 +1,5 @@
+<%= form_for :user, :html => { :multipart => true }, :url => "/users" do |form| %>
+<%= form.file_field :avatar %>
+<%= form.text_field :fname, :placeholder => "First name" %>
+<%= form.submit %>
+<% end %>

@@ -1,6 +1,4 @@
-<%= form_for @user, :url => users/:id,
-:html => { :multipart => true } do |form| %>
-<%= form.file_field :avatar %>
-<%= form.text_field :fname, :placeholder => "First name" %>
-<%= form.submit %>
+<% @users.each do |user| %>
+  <%= user.fname %><br>
+  <%= image_tag user.avatar.url(:medium) %>
 <% end %>

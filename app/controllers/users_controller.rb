@@ -1,17 +1,20 @@
 class UsersController < ApplicationController
   def index
-    @user = User.create
+   @users = User.all
   end
 
   def create
     @user = User.new(user_params)
 
     @user.save
-    redirects_to "users/:id"
+    redirect_to user_path
+  end
+
+  def new
   end
 
   def show
-    @user = User.id
+    @user = User.find(params[:id])
   end
 
   private
